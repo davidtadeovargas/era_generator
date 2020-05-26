@@ -1,0 +1,69 @@
+may 25, 2020 4:05:36 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: org.hibernate.MappingException: composite-id class must implement Serializable: com.era.models.CTipoRelacion
+	at org.hibernate.mapping.RootClass.checkCompositeIdentifier(RootClass.java:263)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:244)
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1332)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1835)
+	at com.era.repositories.utils.HibernateUtil.buildSessionFactoryForLocal(HibernateUtil.java:166)
+	at com.era.repositories.utils.HibernateUtil.loadDbLocal(HibernateUtil.java:105)
+	at com.era.tableviews.Main.main(Main.java:45)
+
+may 25, 2020 4:12:03 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: org.hibernate.MappingException: composite-id class must implement Serializable: com.era.models.CTipoRelacion
+	at org.hibernate.mapping.RootClass.checkCompositeIdentifier(RootClass.java:263)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:244)
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1332)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1835)
+	at com.era.repositories.utils.HibernateUtil.buildSessionFactoryForLocal(HibernateUtil.java:166)
+	at com.era.repositories.utils.HibernateUtil.loadDbLocal(HibernateUtil.java:105)
+	at com.era.tableviews.Main.main(Main.java:45)
+
+may 25, 2020 4:20:17 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: org.hibernate.MappingException: composite-id class must implement Serializable: com.era.models.CPaymentForm
+	at org.hibernate.mapping.RootClass.checkCompositeIdentifier(RootClass.java:263)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:244)
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1332)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1835)
+	at com.era.repositories.utils.HibernateUtil.buildSessionFactoryForLocal(HibernateUtil.java:166)
+	at com.era.repositories.utils.HibernateUtil.loadDbLocal(HibernateUtil.java:105)
+	at com.era.tableviews.Main.main(Main.java:45)
+
+may 25, 2020 4:21:46 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: org.hibernate.MappingException: composite-id class must implement Serializable: com.era.models.CClaveUnidad
+	at org.hibernate.mapping.RootClass.checkCompositeIdentifier(RootClass.java:263)
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:244)
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1332)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1835)
+	at com.era.repositories.utils.HibernateUtil.buildSessionFactoryForLocal(HibernateUtil.java:166)
+	at com.era.repositories.utils.HibernateUtil.loadDbLocal(HibernateUtil.java:105)
+	at com.era.tableviews.Main.main(Main.java:45)
+
+may 25, 2020 4:22:45 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.lang.NullPointerException
+	at com.era.repositories.utils.HibernateSchemeUtil.getTableMetaData(HibernateSchemeUtil.java:77)
+	at com.era.tableviews.Main.main(Main.java:54)
+
+may 25, 2020 4:31:18 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.io.IOException: El sistema no puede encontrar la ruta especificada
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at com.era.tableviews.TableGenerator.createClass(TableGenerator.java:44)
+	at com.era.tableviews.Main.main(Main.java:56)
+
+may 25, 2020 4:39:13 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.lang.NullPointerException
+	at com.era.repositories.utils.HibernateUtil.openSession(HibernateUtil.java:404)
+	at com.era.tableviews.Main.main(Main.java:51)
+
+may 25, 2020 4:45:29 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.lang.NullPointerException
+	at com.era.repositories.utils.HibernateSchemeUtil.getTableMetaData(HibernateSchemeUtil.java:77)
+	at com.era.tableviews.Main.main(Main.java:54)
+
+may 25, 2020 7:04:39 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.io.IOException: El sistema no puede encontrar la ruta especificada
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at com.era.tableviews.generators.tables.TableModelGenerator.createClass(TableModelGenerator.java:45)
+	at com.era.generator.Main.main(Main.java:59)
+
