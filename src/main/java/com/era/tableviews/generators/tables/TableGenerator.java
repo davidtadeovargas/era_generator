@@ -99,14 +99,14 @@ public class TableGenerator {
                 "        }\n" +
                 "   }\n\n" +
                 "   @Override\n" +
-                "   public void insertNewObjectToTable(Object Model) throws Exception {\n" +
+                "   public void insertNewObjectToTable(Object Model_) throws Exception {\n" +
                 "       if(IInsertNewObjectToTable != null){\n" +
-                "            IInsertNewObjectToTable.onPrevInsert(Model);\n" +
+                "            IInsertNewObjectToTable.onPrevInsert(Model_);\n" +
                 "        }\n\n" + 
-                "       final " + className + " " + className + " = (" + className + ")Model;\n\n" +
-                "       RepositoryFactory.getInstance().get" + className + "sRepository().save(Model);\n\n" +
+                "       final " + className + " " + className + " = (" + className + ")Model_;\n\n" +
+                "       RepositoryFactory.getInstance().get" + className + "sRepository().save(Model_);\n\n" +
                 "       if(IInsertNewObjectToTable != null){\n" +
-                "            IInsertNewObjectToTable.onPostInsert(Model);\n" +
+                "            IInsertNewObjectToTable.onPostInsert(Model_);\n" +
                 "        }\n" + 
                 "   }\n\n" +                
                 "   @Override\n" +

@@ -51,11 +51,11 @@ public class Main {
                 final List<Class> tables = HibernateUtil.getSingleton().getAnnottatedClassesForLocal();                
                 final Session Session = HibernateUtil.getSingleton().getSessionFactoryLocal().openSession();
                 
-                //Create the RepositoryFactory
-                RepositoryFactoryGenerator.getSingleton().createClass(tables);
-                
                 //Create all the repositories
                 RepositoriesGenerator.getSingleton().createClass(tables);
+                
+                //Create the RepositoryFactory
+                RepositoryFactoryGenerator.getSingleton().createClass(tables);
                 
                 //Create other stuffs
                 for(Class Class_:tables){

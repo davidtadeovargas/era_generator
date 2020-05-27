@@ -46,39 +46,51 @@ public class RepositoryFactoryGenerator {
             
         try ( //Write the class
             FileWriter writer = new FileWriter(File)) {
-            final String content = this.getContentOfClas(className,tables);
+            final String content = this.getContentOfClas(className,new File(classesPath).listFiles());
             writer.write(content);
         }        
     }
     
-    private String getContentOfClas(final String className, List<Class> tables){
-        
+    private String getContentOfClas(final String className, File[] files){
+                        
         StringBuilder classs = new StringBuilder("package com.era.repositories;\n\n" +
                 "import com.era.logger.LoggerUtility;\n\n" +                
                 "public class " + className + " {\n\n" +
                 "   private static " + className + " " + className + ";\n\n");
-        for(Class Class_: tables){
+        for (File file : files) {                        
             
-            final String simpleName = Class_.getSimpleName();
-            classs.append(  "   private " + simpleName + "sRepository " + simpleName + "sRepository;\n");                    
+            final String fileName = file.getName().replace(".java", "");
+            
+            if(fileName.compareTo(className)==0 || fileName.compareTo("Repository")==0 || file.isDirectory()){
+                continue;
+            }
+            
+            final String simpleName = fileName;
+            classs.append(  "   private " + simpleName + " " + simpleName + ";\n");                    
         }
         classs.append(      "\n");
         classs.append(      "   private " + className + "(){\n" +
                             "   }\n\n");
-        classs.append(      "   final public static RepositoryFactory getInstance(){\n" +
+        classs.append(      "   final public static " + className + " getInstance(){\n" +
                             "       LoggerUtility.getSingleton().logInfo(RepositoryFactory.class, \"Hibernate: Getting instance repository manager\");\n" +
                             "       if(RepositoryFactory==null){\n" + 
                             "           RepositoryFactory = new RepositoryFactory();\n" +
                             "       }\n" + 
                             "       return RepositoryFactory;\n" + 
                             "   }\n\n");
-        for(Class Class_: tables){
+        for (File file : files) {
             
-            final String simpleName = Class_.getSimpleName();
-            classs.append(  "   public " + simpleName + "sRepository get" + simpleName + "sRepository() {\n" +
-                            "       if(" + simpleName + "sRepository==null){" + simpleName + "sRepository = new " + simpleName + "sRepository();}return " + simpleName + "sRepository;\n" +
+            final String fileName = file.getName().replace(".java", "");
+            
+            if(fileName.compareTo(className)==0 || fileName.compareTo("Repository")==0 || file.isDirectory()){
+                continue;
+            }
+            
+            final String simpleName = fileName;
+            classs.append(  "   public " + simpleName + " get" + simpleName + "() {\n" +
+                            "       if(" + simpleName + "==null){" + simpleName + " = new " + simpleName + "();}return " + simpleName + ";\n" +
                             "   }\n");
-        }        
+        }
         classs.append("}");
         
         return classs.toString();
