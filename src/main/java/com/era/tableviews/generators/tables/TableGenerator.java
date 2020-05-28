@@ -88,37 +88,6 @@ public class TableGenerator {
                 "       final " + className + "TableModel " + className + "TableModel = new " + className + "TableModel(items_,this.ShowColumns);\n" +
                 "       this.setModel(" + className + "TableModel);\n" +
                 "   }\n\n" +
-                "   @Override\n" +
-                "   public void deleteObjectInTable(Object Model) throws Exception{\n" +
-                "       if(IDeleteObjectInTable != null){\n" +
-                "            IDeleteObjectInTable.onPrevDelete(Model);\n" +
-                "        }\n\n" +
-                "       RepositoryFactory.getInstance().get" + className + "sRepository().delete(Model);\n\n" + 
-                "       if(IDeleteObjectInTable != null){\n" +
-                "            IDeleteObjectInTable.onPostDelete(Model);\n" +
-                "        }\n" +
-                "   }\n\n" +
-                "   @Override\n" +
-                "   public void insertNewObjectToTable(Object Model_) throws Exception {\n" +
-                "       if(IInsertNewObjectToTable != null){\n" +
-                "            IInsertNewObjectToTable.onPrevInsert(Model_);\n" +
-                "        }\n\n" + 
-                "       final " + className + " " + className + " = (" + className + ")Model_;\n\n" +
-                "       RepositoryFactory.getInstance().get" + className + "sRepository().save(Model_);\n\n" +
-                "       if(IInsertNewObjectToTable != null){\n" +
-                "            IInsertNewObjectToTable.onPostInsert(Model_);\n" +
-                "        }\n" + 
-                "   }\n\n" +                
-                "   @Override\n" +
-                "   public void deleteAllObjectsInTable() throws Exception {\n" +
-                "       if(this.IDeleteAllItemsInTable != null){\n" +
-                "            this.IDeleteAllItemsInTable.onPrevDelete();\n" +
-                "        }\n\n" +
-                "       RepositoryFactory.getInstance().get" + className + "sRepository().deleteAll();\n\n" + 
-                "       if(this.IDeleteAllItemsInTable != null){\n" +
-                "            this.IDeleteAllItemsInTable.onPostDelete();\n" +
-                "        }\n" +
-                "   }\n\n" +
                 "}";
         
         return classs;

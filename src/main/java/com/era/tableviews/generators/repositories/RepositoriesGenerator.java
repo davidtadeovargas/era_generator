@@ -229,7 +229,7 @@ public class RepositoriesGenerator {
                     continue;
                 }
                 
-                final String propertyFirstMayus = property.substring(0, 1).toUpperCase() + property.substring(1);            
+                final String propertyFirstMayus = property.substring(0, 1).toUpperCase() + property.substring(1);
                 if(field.getType() == Integer.class){
                     
                 }
@@ -244,8 +244,8 @@ public class RepositoriesGenerator {
                 }
                 else{
                     StringBuffer.append("       if(" + property + "==null || " + property + ".isEmpty()){\n" +
-                                    "           throw new " + simpleName + "sValidatorsExceptions().get" + propertyFirstMayus + "Exception();\n" +
-                                    "       }\n\n");
+                                        "           throw new " + simpleName + "sValidatorsExceptions().get" + propertyFirstMayus + "Exception();\n" +
+                                        "       }\n\n");
                 }
             }
         }

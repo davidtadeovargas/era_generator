@@ -66,7 +66,7 @@ public class Main {
                     final String className = Class_.getSimpleName();
                     
                     //Create the tablemodels classes
-                    TableModelGenerator.getSingleton().createClass(className);
+                    TableModelGenerator.getSingleton().createClass(Class_, className);
                     
                     //Create the table classes
                     TableGenerator.getSingleton().createClass(className);

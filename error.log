@@ -164,3 +164,32 @@ INFORMACIÓN: Error: java.io.IOException: Acceso denegado
 	at com.era.tableviews.generators.repositories.RepositoriesGenerator.createClass(RepositoriesGenerator.java:99)
 	at com.era.generator.Main.main(Main.java:55)
 
+may 27, 2020 5:38:52 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.io.IOException: Acceso denegado
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at com.era.tableviews.generators.tables.TableModelGenerator.createClass(TableModelGenerator.java:51)
+	at com.era.generator.Main.main(Main.java:69)
+
+may 27, 2020 5:40:28 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.io.IOException: Acceso denegado
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at com.era.tableviews.generators.repositories.RepositoriesGenerator.createValidationFile(RepositoriesGenerator.java:184)
+	at com.era.tableviews.generators.repositories.RepositoriesGenerator.createClass(RepositoriesGenerator.java:99)
+	at com.era.generator.Main.main(Main.java:55)
+
+may 27, 2020 5:41:16 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.io.IOException: Acceso denegado
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at com.era.tableviews.generators.repositories.RepositoriesGenerator.createClass(RepositoriesGenerator.java:82)
+	at com.era.generator.Main.main(Main.java:55)
+
+may 27, 2020 5:53:37 PM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.io.IOException: Acceso denegado
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at com.era.tableviews.generators.tables.TableModelGenerator.createClass(TableModelGenerator.java:51)
+	at com.era.generator.Main.main(Main.java:69)
+
