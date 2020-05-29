@@ -479,12 +479,25 @@ public class RepositoriesGenerator {
         
         String classs = 
                 "package com.era.repositories;\n\n" +
+                "import java.util.List;\n" +
+                "import java.util.ArrayList;\n" +
                 "import com.era.models." + className + ";\n\n" +
                 "public class " + className + "sRepository extends Repository {\n\n" +
                 "   public " + className + "sRepository() {\n" +
                 "        super(" + className + ".class);\n" +
-                "    }\n" +
+                "    }\n\n" +
+                "   @Override\n" +
+                "   final public List<" + className + "> getByLikeEncabezados(final String search) throws Exception{\n" +
+                "        \n" +
+                "       final List<String> likes = new ArrayList<>();\n" +
+                "       likes.add(\"falt\");\n" +
+                "       likes.add(\"fmod\");\n" +
+                "       \n" +
+                "       final List<" + className + "> records = (List<" + className + ">) this.getAllLike(likes, search);\n" +
+                "       \n" +
+                "       return records;\n" +
+                "   }\n\n" +
                 "}";
         return classs;
-    }
+    }    
 }

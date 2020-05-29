@@ -88,6 +88,12 @@ public class TableGenerator {
                 "       final " + className + "TableModel " + className + "TableModel = new " + className + "TableModel(items_,this.ShowColumns);\n" +
                 "       this.setModel(" + className + "TableModel);\n" +
                 "   }\n\n" +
+                "   @Override\n" +
+                "   public void getByLikeEncabezados(final String search) throws Exception {\n" +
+                "       final List<" + className + "> items_ = (List<" + className + ">) RepositoryFactory.getInstance().get" + className + "sRepository().getByLikeEncabezados(search);\n" +
+                "       final " + className + "TableModel " + className + "TableModel = new " + className + "TableModel(items_,this.ShowColumns);\n" +
+                "       this.setModel(" + className + "TableModel);\n" +
+                "   }\n\n" +
                 "}";
         
         return classs;
