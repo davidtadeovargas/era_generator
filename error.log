@@ -193,3 +193,11 @@ INFORMACIÓN: Error: java.io.IOException: Acceso denegado
 	at com.era.tableviews.generators.tables.TableModelGenerator.createClass(TableModelGenerator.java:51)
 	at com.era.generator.Main.main(Main.java:69)
 
+jun 03, 2020 11:51:09 AM com.era.logger.LoggerUtility logError
+INFORMACIÓN: Error: java.io.IOException: Acceso denegado
+	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:1012)
+	at com.era.tableviews.generators.repositories.RepositoriesGenerator.createTableHeaderFile(RepositoriesGenerator.java:399)
+	at com.era.tableviews.generators.repositories.RepositoriesGenerator.createClass(RepositoriesGenerator.java:93)
+	at com.era.generator.Main.main(Main.java:55)
+

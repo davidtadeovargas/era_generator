@@ -199,18 +199,21 @@ public class RepositoriesGenerator {
                                 "import com.era.models." + simpleName + ";\n" +
                                 "import com.era.repositories.RepositoryFactory;\n\n" +
                                 "public class " + className + " extends IValidate{\n\n");
-        StringBuffer.append("   private String code;\n");
         for(String property:propertyNames){
             
             //Get field metadata
             final Field field = Class_.getDeclaredField(property);
             final Column Column = field.getAnnotation(Column.class);
             final boolean nullable = Column.nullable();
+            final String propertyFirstMayus = property.substring(0, 1).toUpperCase() + property.substring(1);
             if(!nullable){
-                if(property.compareTo("estac")==0 || property.compareTo("falt")==0 || property.compareTo("fmod")==0 || property.compareTo("nocaj")==0 || property.compareTo("sucu")==0  || property.compareTo("code")==0){
+                if(property.compareTo("estac")==0 || property.compareTo("falt")==0 || property.compareTo("fmod")==0 || property.compareTo("nocaj")==0 || property.compareTo("sucu")==0){
                     continue;
                 }                
-                StringBuffer.append("   private String " + property + ";\n");
+                StringBuffer.append("   private String " + property + ";\n" +
+                                    "   public void set" + propertyFirstMayus + "(String property){\n" + 
+                                    "       this." + property + " = property;\n" +
+                                    "   }\n\n");                
             }
         }
         StringBuffer.append("\n" +
@@ -249,11 +252,7 @@ public class RepositoriesGenerator {
                 }
             }
         }
-        StringBuffer.append("" + 
-                            "       final " + simpleName + " " + simpleName + " = (" + simpleName + ") RepositoryFactory.getInstance().get" + simpleName + "sRepository().getByCode(code);\n" +
-                            "       if(" + simpleName + " != null){            \n" +
-                            "           throw new " + simpleName + "sValidatorsExceptions().getModelExistsException();\n" +
-                            "       }\n\n" +
+        StringBuffer.append("" +                             
                             "       if(IInsertValidation!=null){\n" +
                             "            final boolean response = IInsertValidation.validate();\n" +
                             "            if(!response){\n" +
@@ -270,23 +269,7 @@ public class RepositoriesGenerator {
                             "               throw new " + simpleName + "sValidatorsExceptions().getCustomVaidationNotPassedException();\n" +
                             "           }\n" +
                             "       }\n" +
-                            "   }\n\n" + 
-                            "   @Override\n" +
-                            "   public void validateDelete() throws Exception {\n\n" +                            
-                            "       if(code==null || code.isEmpty()){\n" +
-                            "           throw new " + simpleName + "sValidatorsExceptions().getCodeException();\n" +
-                            "       }\n\n" +                            
-                            "       final " + simpleName + " " + simpleName + " = (" + simpleName + ") RepositoryFactory.getInstance().get" + simpleName + "sRepository().getByCode(code);\n" +
-                            "       if(" + simpleName + " == null){            \n" +
-                            "           throw new " + simpleName + "sValidatorsExceptions().getModelNotExistsException();\n" +
-                            "       }\n\n" +                            
-                            "       if(IDeleteValidation!=null){\n" +
-                            "           final boolean response = IDeleteValidation.validate();\n" +
-                            "           if(!response){\n" +
-                            "               throw new " + simpleName + "sValidatorsExceptions().getCustomVaidationNotPassedException();\n" +
-                            "           }\n" +
-                            "       }\n" +
-                            "    }\n" + 
+                            "   }\n\n" +
                             "}");
         
                 
